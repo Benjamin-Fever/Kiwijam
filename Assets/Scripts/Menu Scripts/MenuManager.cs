@@ -14,9 +14,20 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button backInstBtn;
     [SerializeField] private Button backCredBtn;
     [SerializeField] private GameObject eventSystem;
+    [SerializeField] private AudioSource sfxSourceRef;
+    [SerializeField] private AudioClip onSelectedAudRef;
+    [SerializeField] private AudioClip onClickAudRef;
+
+    public static AudioSource sfxSource;
+    public static AudioClip onSelectedAud;
+    public static AudioClip onClickAud;
 
     void Start()
     {
+        sfxSource = sfxSourceRef;
+        onSelectedAud = onSelectedAudRef;
+        onClickAud = onClickAudRef;
+
         instScreen.SetActive(false);
         credScreen.SetActive(false);
 
