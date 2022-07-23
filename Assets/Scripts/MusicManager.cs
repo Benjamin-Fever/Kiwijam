@@ -11,6 +11,7 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         musicSource = GetComponent<AudioSource>();
+        musicSource.loop = true;
         musicSource.clip = bgSong;
 
         if (musicIsOn)
