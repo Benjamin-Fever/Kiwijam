@@ -24,7 +24,7 @@ public class ghostController : MonoBehaviour
         if (collideObj.name == "Spotlight")
         {
             player.GetComponent<playerControls>().ghostMode = false;
-            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            player.GetComponent<BoxCollider2D>().enabled = true;
             gameObject.SetActive(false);
         }
     }
