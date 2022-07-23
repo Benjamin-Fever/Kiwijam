@@ -4,28 +4,23 @@ using UnityEngine;
 
 public class playerControls : MonoBehaviour
 {
-    public int speed = 20;
+    public float speed = 20f;
     public Transform ghost;
-
     public bool ghostMode = false;
-    private GameObject interactable = null;
 
-    // Update is called once per frame
+    private GameObject interactable = null;
+    private Vector2 movement;
+
     void Update()
     {
-        // // Switch ghost states
-        //body.AddForce(transform.up * (10 * 200 * (Input.GetButtonDown("Jump") ? 1f : 0f))); Code for jump
-
         move();
         interaction();
         ghostTransition();
-
-
     }
 
     void interaction()
     {
-        if (interactable == null || !Input.GetButtonDown("Jump")) return;
+        if (interactable == null || !Input.GetButtonDown("Jump")) return; // If near an interactable object and push space
         interactController ineraction = interactable.GetComponent<interactController>();
         ineraction.interacted = !ineraction.interacted;
     }
@@ -38,11 +33,11 @@ public class playerControls : MonoBehaviour
         {
             // Return to ghost
             float distance = Mathf.Sqrt(Mathf.Pow(ghost.position.x - transform.position.x, 2) + Mathf.Pow(ghost.position.y - transform.position.y, 2));
-            if (distance < 4)
+            if (distance < 26)
             {
                 ghostMode = false;
                 ghost.gameObject.SetActive(false);
-                GetComponent<BoxCollider2D>().enabled = true;
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
             }
         }
@@ -52,27 +47,31 @@ public class playerControls : MonoBehaviour
             ghostMode = true;
             ghost.position = new Vector3(transform.position.x + 1, transform.position.y + 1, transform.position.z);
             ghost.gameObject.SetActive(true);
-            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 
     // Player Movement
     void move()
     {
-        if (ghostMode) return;
+        float inputX = Input.GetAxis("Horizontal"); // Read movement whe not in ghost mode
+        movement = new Vector2(speed * inputX, 0);
+    }
 
-        float moveX = Input.GetAxis("Horizontal");
-        Vector3 moveDir = new Vector3(moveX, 0).normalized;
-        transform.position += moveDir * speed * Time.deltaTime;
+    void FixedUpdate()
+    {
+        GetComponent<Rigidbody2D>().velocity = movement; // Apply movement
     }
 
     // This trigger is to detect when near interactable objects
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        interactable = collision.transform.parent.gameObject;
-        if (interactable.tag != "interact") interactable = null;
+        interactable = collision.transform.parent.gameObject; 
+        if (interactable.name != "Switch") interactable = null;
     }
 
-    private void OnTriggerExit2D(Collider2D collision) { interactable = null; }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        interactable = null;
+    }
 }
