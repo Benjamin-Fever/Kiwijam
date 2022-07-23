@@ -10,7 +10,11 @@ public class interactController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.name == "Switch") connection.SetActive(!interacted);
+        if (transform.name == "Switch") 
+        {
+            connection.SetActive(!interacted);
+            connection.transform.parent.GetChild(2).gameObject.SetActive(!interacted);
+        }
 
     }
 }

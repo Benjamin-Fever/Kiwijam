@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class playerControls : MonoBehaviour
 {
-    public Rigidbody2D body;
     public int speed = 20;
-    public float gravity = 10;
+    public Transform ghost;
 
-    private bool ghostMode = false;
+    public bool ghostMode = false;
     private GameObject interactable = null;
-    //public float jumpHeight = 10;
 
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetButtonDown("Jump")) ghostMode = !ghostMode; // Switch ghost states
-        //body.AddForce(transform.up * (jumpHeight * 200 * (Input.GetButtonDown("Jump") ? 1f : 0f))); Code for jump
+        // // Switch ghost states
+        //body.AddForce(transform.up * (10 * 200 * (Input.GetButtonDown("Jump") ? 1f : 0f))); Code for jump
 
         move();
         interaction();
+        ghostTransition();
 
 
     }
@@ -29,6 +28,32 @@ public class playerControls : MonoBehaviour
         if (interactable == null || !Input.GetButtonDown("Jump")) return;
         interactController ineraction = interactable.GetComponent<interactController>();
         ineraction.interacted = !ineraction.interacted;
+    }
+
+    void ghostTransition()
+    {
+        if (interactable != null) { return; }
+
+        if (Input.GetButtonDown("Jump") && ghostMode)
+        {
+            // Return to ghost
+            float distance = Mathf.Sqrt(Mathf.Pow(ghost.position.x - transform.position.x, 2) + Mathf.Pow(ghost.position.y - transform.position.y, 2));
+            if (distance < 4)
+            {
+                ghostMode = false;
+                ghost.gameObject.SetActive(false);
+                GetComponent<BoxCollider2D>().enabled = true;
+
+            }
+        }
+        else if (Input.GetButtonDown("Jump"))
+        {
+            // Ghost leave body
+            ghostMode = true;
+            ghost.position = new Vector3(transform.position.x + 1, transform.position.y + 1, transform.position.z);
+            ghost.gameObject.SetActive(true);
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
     }
 
     // Player Movement
