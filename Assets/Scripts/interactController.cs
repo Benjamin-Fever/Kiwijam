@@ -11,5 +11,6 @@ public class interactController : MonoBehaviour
     void Update()
     {
         if (transform.name == "Switch") connection.SetActive(!interacted);
+
     }
 }
