@@ -4,13 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PlayBtnSound : MonoBehaviour, ISelectHandler
+public class PlayBtnSound : MonoBehaviour
 {
-    private bool clickAudIsOn;
 
     void Start()
     {
-        clickAudIsOn = false;
         GetComponent<Button>().onClick.AddListener(OnClickPlayAud);
     }
 
@@ -19,16 +17,4 @@ public class PlayBtnSound : MonoBehaviour, ISelectHandler
         MenuManager.sfxSource.PlayOneShot(MenuManager.onClickAud);
     }
 
-    public void OnSelect(BaseEventData eventData)
-    {
-        if (clickAudIsOn)
-        {
-            MenuManager.sfxSource.PlayOneShot(MenuManager.onSelectedAud);
-        }
-        else
-        {
-            clickAudIsOn = true;
-        }
-
-    }
 }

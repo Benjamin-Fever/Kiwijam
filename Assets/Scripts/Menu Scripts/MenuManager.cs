@@ -13,7 +13,6 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject credScreen;
     [SerializeField] private Button backInstBtn;
     [SerializeField] private Button backCredBtn;
-    [SerializeField] private GameObject eventSystem;
     [SerializeField] private AudioSource sfxSourceRef;
     [SerializeField] private AudioClip onSelectedAudRef;
     [SerializeField] private AudioClip onClickAudRef;
@@ -41,29 +40,21 @@ public class MenuManager : MonoBehaviour
     private void BackFromCred()
     {
         credScreen.SetActive(false);
-        eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().
-            SetSelectedGameObject(credBtn.gameObject);
     }
 
     private void BackFromInst()
     {
         instScreen.SetActive(false);
-        eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().
-            SetSelectedGameObject(instBtn.gameObject);
     }
 
     private void ShowCredScreen()
     {
         credScreen.SetActive(true);
-        eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().
-            SetSelectedGameObject(backCredBtn.gameObject);
     }
 
     private void ShowInstScreen()
     {
         instScreen.SetActive(true);
-        eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().
-            SetSelectedGameObject(backInstBtn.gameObject);
     }
 
     private void PlayGame()
