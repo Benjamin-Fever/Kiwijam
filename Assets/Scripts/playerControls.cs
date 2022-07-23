@@ -9,24 +9,26 @@ public class playerControls : MonoBehaviour
     public float gravity = 10;
 
     private bool ghostMode = false;
-    private Transform interactable = null;
+    private GameObject interactable = null;
     //public float jumpHeight = 10;
 
     // Update is called once per frame
     void Update()
     {
         //if (Input.GetButtonDown("Jump")) ghostMode = !ghostMode; // Switch ghost states
+        //body.AddForce(transform.up * (jumpHeight * 200 * (Input.GetButtonDown("Jump") ? 1f : 0f))); Code for jump
+
         move();
         interaction();
 
-        //body.AddForce(transform.up * (jumpHeight * 200 * (Input.GetButtonDown("Jump") ? 1f : 0f))); Code for jump
 
     }
 
     void interaction()
     {
         if (interactable == null || !Input.GetButtonDown("Jump")) return;
-        Debug.Log("test");
+        interactController ineraction = interactable.GetComponent<interactController>();
+        ineraction.interacted = !ineraction.interacted;
     }
 
     // Player Movement
@@ -43,7 +45,7 @@ public class playerControls : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        interactable = collision.transform.parent.transform;
+        interactable = collision.transform.parent.gameObject;
         if (interactable.tag != "interact") interactable = null;
     }
 
