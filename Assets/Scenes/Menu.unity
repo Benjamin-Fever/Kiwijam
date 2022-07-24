@@ -541,8 +541,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Instructions
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc5f8968144132a4391aee07541b1d08, type: 2}
-  m_sharedMaterial: {fileID: 1889745180307139387, guid: fc5f8968144132a4391aee07541b1d08, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc752d89e50ac194c8169e8e0772b06b, type: 2}
+  m_sharedMaterial: {fileID: 9154075319830203933, guid: bc752d89e50ac194c8169e8e0772b06b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -939,7 +939,11 @@ MonoBehaviour:
 
 
     The
-    ghost can fly through walls but cannot enter the light.'
+    ghost can fly through walls but cannot enter the light.
+
+
+    When the ghost
+    is near the human, press the spacebar to switch back.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 804acf03217d6864990ffd4c3553e869, type: 2}
   m_sharedMaterial: {fileID: -5924785399538765937, guid: 804acf03217d6864990ffd4c3553e869, type: 2}
@@ -4426,8 +4430,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credits
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc5f8968144132a4391aee07541b1d08, type: 2}
-  m_sharedMaterial: {fileID: 1889745180307139387, guid: fc5f8968144132a4391aee07541b1d08, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bc752d89e50ac194c8169e8e0772b06b, type: 2}
+  m_sharedMaterial: {fileID: 9154075319830203933, guid: bc752d89e50ac194c8169e8e0772b06b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
