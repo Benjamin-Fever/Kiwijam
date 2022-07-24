@@ -1541,7 +1541,7 @@ MonoBehaviour:
   backCredBtn: {fileID: 577883095}
   sfxSourceRef: {fileID: 1680181230}
   onSelectedAudRef: {fileID: 8300000, guid: eda29996f84118a45911bde56cff11c6, type: 3}
-  onClickAudRef: {fileID: 8300000, guid: 6dc4b3cf77396ae499c82c84e988340d, type: 3}
+  onClickAudRef: {fileID: 8300000, guid: 93ede647657b3424b8fba87ee686497c, type: 3}
 --- !u!4 &575753519
 Transform:
   m_ObjectHideFlags: 0
@@ -1569,8 +1569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb45b8f5095dd0e41b20f54a316ccc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicIsOn: 0
-  bgSong: {fileID: 0}
+  musicIsOn: 1
+  bgSong: {fileID: 8300000, guid: 380d75488b96a024fa001551f314cc74, type: 3}
 --- !u!82 &575753521
 AudioSource:
   m_ObjectHideFlags: 0
