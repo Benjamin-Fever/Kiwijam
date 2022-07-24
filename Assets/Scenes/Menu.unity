@@ -931,12 +931,15 @@ MonoBehaviour:
   m_text: 'Move with the arrow keys.
 
 
-    Interact with objects with the space bar.
+    Use the space bar to interact with objects.
 
 
+    When
+    no interactable objects are near, use the spacebar to control the ghost.
 
 
-'
+    The
+    ghost can fly through walls but cannot enter the light.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 804acf03217d6864990ffd4c3553e869, type: 2}
   m_sharedMaterial: {fileID: -5924785399538765937, guid: 804acf03217d6864990ffd4c3553e869, type: 2}
@@ -963,8 +966,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
