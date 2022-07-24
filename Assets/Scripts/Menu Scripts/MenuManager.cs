@@ -24,11 +24,8 @@ public class MenuManager : MonoBehaviour
     public static AudioClip onSelectedAud;
     public static AudioClip onClickAud;
 
-    private bool inCredits;
-
     void Start()
     {
-        inCredits = false;
         sfxSource = sfxSourceRef;
         onSelectedAud = onSelectedAudRef;
         onClickAud = onClickAudRef;
@@ -49,7 +46,6 @@ public class MenuManager : MonoBehaviour
     private void BackFromCred()
     {
         credScreen.SetActive(false);
-        inCredits = false;
         musicSource.clip = bgMusic;
         musicSource.Play();
     }
@@ -62,10 +58,8 @@ public class MenuManager : MonoBehaviour
     private void ShowCredScreen()
     {
         credScreen.SetActive(true);
-        inCredits = true;
         musicSource.clip = credMusic;
         musicSource.Play();
-
     }
 
     private void ShowInstScreen()
