@@ -16,13 +16,19 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private AudioSource sfxSourceRef;
     [SerializeField] private AudioClip onSelectedAudRef;
     [SerializeField] private AudioClip onClickAudRef;
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioClip bgMusic;
+    [SerializeField] private AudioClip credMusic;
 
     public static AudioSource sfxSource;
     public static AudioClip onSelectedAud;
     public static AudioClip onClickAud;
 
+    private bool inCredits;
+
     void Start()
     {
+        inCredits = false;
         sfxSource = sfxSourceRef;
         onSelectedAud = onSelectedAudRef;
         onClickAud = onClickAudRef;
@@ -35,11 +41,17 @@ public class MenuManager : MonoBehaviour
         credBtn.onClick.AddListener(ShowCredScreen);
         backInstBtn.onClick.AddListener(BackFromInst);
         backCredBtn.onClick.AddListener(BackFromCred);
+
+        musicSource.clip = bgMusic;
+        musicSource.Play();
     }
 
     private void BackFromCred()
     {
         credScreen.SetActive(false);
+        inCredits = false;
+        musicSource.clip = bgMusic;
+        musicSource.Play();
     }
 
     private void BackFromInst()
@@ -50,6 +62,10 @@ public class MenuManager : MonoBehaviour
     private void ShowCredScreen()
     {
         credScreen.SetActive(true);
+        inCredits = true;
+        musicSource.clip = credMusic;
+        musicSource.Play();
+
     }
 
     private void ShowInstScreen()
