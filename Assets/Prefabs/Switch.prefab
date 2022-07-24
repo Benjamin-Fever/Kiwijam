@@ -129,8 +129,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.6782092, y: -0.20744655}
-  m_Size: {x: 1.7115074, y: 4.7030654}
+  m_Offset: {x: -1.0205489, y: -0.04442792}
+  m_Size: {x: 1.02682, y: 4.3770223}
   m_Direction: 0
 --- !u!1 &8812296127735331657
 GameObject:
@@ -180,3 +180,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interacted: 0
   connection: {fileID: 0}
+  player: {fileID: 0}
+  ladderTop: {x: 0, y: 0, z: 0}
+  ladderBottom: {x: 0, y: 0, z: 0}
