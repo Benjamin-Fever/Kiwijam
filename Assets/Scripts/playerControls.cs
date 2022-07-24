@@ -42,7 +42,7 @@ public class playerControls : MonoBehaviour
             {
                 ghostMode = false;
                 ghost.gameObject.SetActive(false);
-                GetComponent<BoxCollider2D>().enabled = true;
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
             }
         }
@@ -52,7 +52,7 @@ public class playerControls : MonoBehaviour
             ghostMode = true;
             ghost.position = new Vector3(transform.position.x + 1, transform.position.y + 1, transform.position.z);
             ghost.gameObject.SetActive(true);
-            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 
@@ -71,7 +71,12 @@ public class playerControls : MonoBehaviour
     {
 
         interactable = collision.transform.parent.gameObject;
-        if (interactable.tag != "interact") interactable = null;
+        if (interactable.name == "Extended")
+        {
+            interactable = interactable.transform.parent.gameObject;
+        }
+        Debug.Log(interactable.name);
+        if (interactable.tag != "Human_Interact") interactable = null;
     }
 
     private void OnTriggerExit2D(Collider2D collision) { interactable = null; }

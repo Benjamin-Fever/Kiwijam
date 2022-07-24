@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 8812296127735331663}
   m_Layer: 0
   m_Name: Switch
-  m_TagString: interact
+  m_TagString: Human_Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
