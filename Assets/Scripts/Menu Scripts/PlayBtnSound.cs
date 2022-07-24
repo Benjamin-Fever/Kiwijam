@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class PlayBtnSound : MonoBehaviour
+public class PlayBtnSound : MonoBehaviour, IPointerEnterHandler
 {
 
     void Start()
@@ -15,6 +15,11 @@ public class PlayBtnSound : MonoBehaviour
     private void OnClickPlayAud()
     {
         MenuManager.sfxSource.PlayOneShot(MenuManager.onClickAud);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        MenuManager.sfxSource.PlayOneShot(MenuManager.onSelectedAud);
     }
 
 }

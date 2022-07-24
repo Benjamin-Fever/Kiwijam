@@ -1538,8 +1538,8 @@ MonoBehaviour:
   backInstBtn: {fileID: 165178893}
   backCredBtn: {fileID: 711123502}
   sfxSourceRef: {fileID: 1680181230}
-  onSelectedAudRef: {fileID: 8300000, guid: eda29996f84118a45911bde56cff11c6, type: 3}
-  onClickAudRef: {fileID: 8300000, guid: 93ede647657b3424b8fba87ee686497c, type: 3}
+  onSelectedAudRef: {fileID: 8300000, guid: fe9ccfa00bc34aa4a971a960d90187df, type: 3}
+  onClickAudRef: {fileID: 8300000, guid: 1217acc864d38b3459626349fdb44a6e, type: 3}
   musicSource: {fileID: 575753521}
   bgMusic: {fileID: 8300000, guid: 62be97d1505ee39418a3c99ac9c25e17, type: 3}
   credMusic: {fileID: 8300000, guid: 380d75488b96a024fa001551f314cc74, type: 3}
