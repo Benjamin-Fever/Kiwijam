@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b7cbc2b6dde1ad9449afdcf0383d0fc5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Ghostmeat
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 47c25d74785bc7e47a951d19362c66ac, type: 3}
+  - {fileID: 12800000, guid: a04cb7528b40a2f4cba7ce56f7446f80, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
