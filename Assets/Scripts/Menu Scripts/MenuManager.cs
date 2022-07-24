@@ -40,6 +40,7 @@ public class MenuManager : MonoBehaviour
         backCredBtn.onClick.AddListener(BackFromCred);
 
         musicSource.clip = bgMusic;
+        musicSource.loop = true;
         musicSource.Play();
     }
 
